@@ -3,36 +3,60 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  padding-top: 45px;
   pointer-events: none;
+  max-width: 400px;
+  max-height: 400px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@media only screen and (max-width: 400px) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    padding-top: 30px;
+    pointer-events: none;
+    max-width: 300px;
+    max-height: 300px;
   }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: linear-gradient(-10deg, #00834a, #95bf46, #029622);
+  background-size: 200% 200%;
+  animation: gradient 6s ease infinite;
+  max-height: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.headerUnderline {
+  background: linear-gradient(-10deg, #029622,#95bf46, #00834a);
+  background-size: 200% 200%;
+  animation: gradient 6s ease infinite;
+  min-height: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html, body {
+  width: 100%;
+  height:100%;
+}
+
+body {
+    background: #f6f6f6;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
