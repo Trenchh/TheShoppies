@@ -5,10 +5,12 @@ import logo from './shoppiesLogo.png';
 import voteBanner from './voteNow.png'
 import MovieList from './MovieList';
 import Search from './Search';
+//import AddNomination from './AddNomination';
 
 const App = () => {
 	const [movies, setMovies] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
+	const [nominations, setNominations] = useState([]);
 
 	const getMovieRequest = async (searchValue) => {
 		const url = `http://www.omdbapi.com/?s=${searchValue}&type=movie&apikey=6c8d3168`;
@@ -19,6 +21,11 @@ const App = () => {
 		if (responseJson.Search) {
 			setMovies(responseJson.Search);
 		}
+	};
+
+	const addNomination = (movie) => {
+		const newNominationList = [...nominations, movie];
+		setNominations(newNominationList);
 	};
 
 	useEffect(() => {
@@ -32,13 +39,15 @@ const App = () => {
       </header>
       <body>
         <div className="headerUnderline"></div>
-        <div> <img src={voteBanner} className="voteNow" alt="voteNowLogo" /></div>
+        <div className="voteNow"> <img src={voteBanner}  alt="voteNowLogo" /></div>
         <div>
           <Search searchValue={searchValue} setSearchValue={setSearchValue} />
         </div>
-        <div className='row'>
-				<MovieList movies={movies} />
+        <div className='container-fluid movie-row'>
+			<div className='row movieListSpacing'>
+				<MovieList movies={movies} /*favouriteComponent={AddNomination}*/ handleNominationClick={addNomination}/>
 			</div>
+		</div>
       </body>
     </div>
 	);
