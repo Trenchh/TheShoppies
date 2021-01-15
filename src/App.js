@@ -56,6 +56,7 @@ const App = () => {
 			{/* <div className="resultsHeading">
 				<h1>Results for "{searchValue}"</h1>
 			</div> */}
+			
 			<div className='row movieListSpacing'>
 				<MovieList movies={movies} favouriteComponent={AddNomination} handleNominationClick={addNominationsToList}/>
 			</div>
