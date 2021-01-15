@@ -4,6 +4,8 @@
 }
 
 .search-icon {
+    min-width: 30px;
+    min-height: 30px;
     position: relative;
     font-size: 22px;
     color: #d4d4d4;
@@ -15,6 +17,10 @@
     margin-top: 10px;
     text-align: center;
     
+}
+
+input:focus::placeholder {
+  color: transparent;
 }
 
 .container input{

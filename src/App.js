@@ -5,7 +5,8 @@ import logo from './shoppiesLogo.png';
 import voteBanner from './voteNow.png'
 import MovieList from './MovieList';
 import Search from './Search';
-//import AddNomination from './AddNomination';
+import AddNomination from './AddNomination';
+import RemoveNomination from './RemoveNomination';
 
 const App = () => {
 	const [movies, setMovies] = useState([]);
@@ -23,14 +24,22 @@ const App = () => {
 		}
 	};
 
-	const addNomination = (movie) => {
+	const addNominationsToList = (movie) => {
 		const newNominationList = [...nominations, movie];
+		setNominations(newNominationList);
+	};
+
+	const removeNominationsFromList = (movie) => {
+		const newNominationList = nominations.filter(
+			(nomination) => nomination.imdbID !== movie.imdbID
+		);	
 		setNominations(newNominationList);
 	};
 
 	useEffect(() => {
 		getMovieRequest(searchValue);
 	}, [searchValue]);
+
 
 	return (
     <div className="App">
@@ -44,8 +53,17 @@ const App = () => {
           <Search searchValue={searchValue} setSearchValue={setSearchValue} />
         </div>
         <div className='container-fluid movie-row'>
+			{/* <div className="resultsHeading">
+				<h1>Results for "{searchValue}"</h1>
+			</div> */}
 			<div className='row movieListSpacing'>
-				<MovieList movies={movies} /*favouriteComponent={AddNomination}*/ handleNominationClick={addNomination}/>
+				<MovieList movies={movies} favouriteComponent={AddNomination} handleNominationClick={addNominationsToList}/>
+			</div>
+			<div className="resultsHeading">
+				<h1>Your Nominations</h1>
+			</div>
+			<div className='row movieListSpacing'>
+				<MovieList movies={nominations} favouriteComponent={RemoveNomination} handleNominationClick={removeNominationsFromList}/>
 			</div>
 		</div>
       </body>
@@ -54,29 +72,3 @@ const App = () => {
 };
 
 export default App;
-
-
-// import logo from './shoppiesLogo.png';
-// import voteBanner from './voteNow.png'
-// import './App.css';
-// import Search from './Search';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//       </header>
-//       <body>
-//         <div className="headerUnderline"></div>
-//         <div> <img src={voteBanner} className="voteNow" alt="voteNowLogo" /></div>
-//         <div>
-//           <Search/>
-//         </div>
-        
-//       </body>
-//     </div>
-//   );
-// }
-
-// export default App;
