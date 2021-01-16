@@ -56,14 +56,12 @@ const App = () => {
 					<Search searchValue={searchValue} setSearchValue={setSearchValue} />
 				</div>
 				<div className='container-fluid movie-row'>
+					<div className="resultsHeading">
 					{searchValue !== ''
-						? <div className="resultsHeading">
-							<h1>Results for "{searchValue}"</h1>
-						</div>
-						: <div className="resultsHeading">
-							<h1>Trending</h1>
-						</div>
+						? <h1>Results for "{searchValue}"</h1>
+						: <h1>Trending</h1>
 					}
+					</div>
 					{searchValue !== '' && nominations.length < 5
 						? <div className='row movieListSpacing'>
 							<MovieList movies={movies} nominations={nominations} favouriteComponent={AddNomination} handleNominationClick={addNominationsToList} />

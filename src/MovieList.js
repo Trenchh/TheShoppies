@@ -21,7 +21,7 @@ const MovieList = (props) => {
 						</div>
 						{NominationList.some(nom => nom.imdbID === movie.imdbID)
 							?<>
-							<span className='nomText'>Nominated</span>
+							<span className='linear-wipe'>Nominated</span>
 						</> 
 							:
 							<div
