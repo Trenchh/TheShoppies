@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './shoppiesLogo.png';
-import voteBanner from './voteNow.png'
+import voteBanner from './voteNowBanner.png'
 import MovieList from './MovieList';
 import Search from './Search';
 import AddNomination from './AddNomination';
@@ -53,17 +53,22 @@ const App = () => {
           <Search searchValue={searchValue} setSearchValue={setSearchValue} />
         </div>
         <div className='container-fluid movie-row'>
-			{/* <div className="resultsHeading">
-				<h1>Results for "{searchValue}"</h1>
-			</div> */}
-			
+			{searchValue !== ''
+						? <div className="resultsHeading">
+							<h1>Results for "{searchValue}"</h1>
+						</div>
+						: <div className="resultsHeading">
+							<h1>Top Contenders</h1>
+						</div>
+			}
+
 			<div className='row movieListSpacing'>
-				<MovieList movies={movies} favouriteComponent={AddNomination} handleNominationClick={addNominationsToList}/>
+				<MovieList movies={movies} nominations={nominations} favouriteComponent={AddNomination} handleNominationClick={addNominationsToList}/>
 			</div>
-			<div className="resultsHeading">
+			<div className="nomHeading">
 				<h1>Your Nominations</h1>
 			</div>
-			<div className='row movieListSpacing'>
+			<div className='row movieListSpacing nomSection'>
 				<MovieList movies={nominations} favouriteComponent={RemoveNomination} handleNominationClick={removeNominationsFromList}/>
 			</div>
 		</div>
@@ -73,3 +78,16 @@ const App = () => {
 };
 
 export default App;
+
+{/* <div className="container">
+			<div className="confetti"/>
+			<div className="confetti"/>
+			<div className="confetti"/>
+			<div className="confetti"/>
+			<div className="confetti"/>
+			<div className="confetti"/>	
+			<div className="confetti"/>
+			<div className="confetti"/>
+			<div className="confetti"/>
+			<div className="confetti"/>
+		</div>	 */}

@@ -1,0 +1,16 @@
+.posterSize {
+    width: 11.9em;
+    height: 14em;
+}
+
+.cardSpacing {
+    margin-left: 1.5em;
+}
+
+.cardWidth {
+    width: 12em;
+}
+
+.nomText{
+    font-weight: bold;
+}

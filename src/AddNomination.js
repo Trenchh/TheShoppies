@@ -1,15 +1,16 @@
 import React from 'react';
+import './MovieList.css'
 
 const AddNomination = () => {
 	return (
 		<>
-			<span className='mr-2'>Add to Nominations</span>
+			<span className='mr-2 nomText'>Add to Nominations</span>
 			<svg
-				width='1em'
+				width='1.3em'
 				height='1em'
 				viewBox='0 0 16 16'
 				class='bi bi-heart-fill'
-				fill='red'
+				fill='#8fd50a'
 				xmlns='http://www.w3.org/2000/svg'
 			>
 				<path
