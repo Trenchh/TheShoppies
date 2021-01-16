@@ -20,9 +20,7 @@ const MovieList = (props) => {
 							<p className="card-text">{movie.Year}</p>
 						</div>
 						{NominationList.some(nom => nom.imdbID === movie.imdbID)
-							?<>
-							<span className='linear-wipe'>Nominated</span>
-						</> 
+							?<span className='linear-wipe'>Nominated</span>
 							:
 							<div
 								onClick={() => props.handleNominationClick(movie)}
@@ -37,11 +35,6 @@ const MovieList = (props) => {
 		</>
 	);
 };
-
-function checkNominations(check,nominations) {
-	console.log(nominations.some(nom => nom.imdbID === check.imdbID));
-	return(nominations.some(nom => nom.imdbID === check.imdbID));
-}
 
 
 

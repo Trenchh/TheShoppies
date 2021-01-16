@@ -8,7 +8,9 @@ import NominationList from './NominationList';
 import Search from './Search';
 import AddNomination from './AddNomination';
 import RemoveNomination from './RemoveNomination';
+import MaxNominationsFix from './MaxNominationsFix';
 import initialDetails from './InitialDetails';
+import MovieListRender from './MovieListRender'
 
 
 const App = () => {
@@ -31,6 +33,12 @@ const App = () => {
 		const newNominationList = [...nominations, movie];
 		setNominations(newNominationList);
 	};
+
+	const maxNomFix = (movie) => {
+		const newNominationList = [...nominations];
+		setNominations(newNominationList);
+	};
+
 
 	const removeNominationsFromList = (movie) => {
 		const newNominationList = nominations.filter(
@@ -62,14 +70,10 @@ const App = () => {
 						: <h1>Trending</h1>
 					}
 					</div>
-					{searchValue !== '' && nominations.length < 5
-						? <div className='row movieListSpacing'>
-							<MovieList movies={movies} nominations={nominations} favouriteComponent={AddNomination} handleNominationClick={addNominationsToList} />
-						</div>
-						: <div className='row movieListSpacing'>
-							<MovieList movies={initialDetails} nominations={nominations} favouriteComponent={AddNomination} handleNominationClick={addNominationsToList} />
-						</div>
-					}
+					<div className='row movieListSpacing'>
+						<MovieListRender movies={movies} initialDetails={initialDetails} nominations={nominations} favouriteComponent={AddNomination} 
+						maxNominationsFix={MaxNominationsFix} searchValue={searchValue} handleNominationClick={addNominationsToList} handleNominationClick2={maxNomFix}/>
+					</div>
 					<div className="nomHeading">
 						<h1>Your Nominations</h1>
 					</div>
