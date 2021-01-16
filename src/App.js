@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './shoppiesLogo.png';
 import voteBanner from './voteNowBanner.png'
 import MovieList from './MovieList';
+import NominationList from './NominationList';
 import Search from './Search';
 import AddNomination from './AddNomination';
 import RemoveNomination from './RemoveNomination';
@@ -69,7 +70,7 @@ const App = () => {
 				<h1>Your Nominations</h1>
 			</div>
 			<div className='row movieListSpacing nomSection'>
-				<MovieList movies={nominations} favouriteComponent={RemoveNomination} handleNominationClick={removeNominationsFromList}/>
+				<NominationList movies={nominations} favouriteComponent={RemoveNomination} handleNominationClick={removeNominationsFromList}/>
 			</div>
 		</div>
       </body>

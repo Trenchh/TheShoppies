@@ -5,7 +5,6 @@ import './MovieList.css'
 
 const MovieList = (props) => {
 	const FavouriteComponent = props.favouriteComponent;
-	const NominationList = props.nominations;
 	return (
 		<>
 			{props.movies.map((movie) => (
@@ -19,29 +18,17 @@ const MovieList = (props) => {
 							<h5 className="card-title">{movie.Title}</h5>
 							<p className="card-text">{movie.Year}</p>
 						</div>
-						{NominationList.some(nom => nom.imdbID === movie.imdbID)
-							?<>
-							<span className='nomText'>Nominated</span>
-						</> 
-							:
-							<div
-								onClick={() => props.handleNominationClick(movie)}
-								className='overlay d-flex align-items-center justify-content-center'>
-								<FavouriteComponent />
-							</div>
-						}
-
+						<div
+							onClick={() => props.handleNominationClick(movie)}
+							className='overlay d-flex align-items-center justify-content-center'>
+							<FavouriteComponent />
+						</div>
 					</div>
 				</div>
 			))}
 		</>
 	);
 };
-
-function checkNominations(check,nominations) {
-	console.log(nominations.some(nom => nom.imdbID === check.imdbID));
-	return(nominations.some(nom => nom.imdbID === check.imdbID));
-}
 
 
 
