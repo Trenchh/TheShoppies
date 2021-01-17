@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/TheShoppies/static/css/main.06203209.chunk.css",
+    "main.js": "/TheShoppies/static/js/main.6826fb43.chunk.js",
+    "main.js.map": "/TheShoppies/static/js/main.6826fb43.chunk.js.map",
+    "runtime-main.js": "/TheShoppies/static/js/runtime-main.b5d814da.js",
+    "runtime-main.js.map": "/TheShoppies/static/js/runtime-main.b5d814da.js.map",
+    "static/css/2.ae9f1eb3.chunk.css": "/TheShoppies/static/css/2.ae9f1eb3.chunk.css",
+    "static/js/2.3e5c38d4.chunk.js": "/TheShoppies/static/js/2.3e5c38d4.chunk.js",
+    "static/js/2.3e5c38d4.chunk.js.map": "/TheShoppies/static/js/2.3e5c38d4.chunk.js.map",
+    "index.html": "/TheShoppies/index.html",
+    "static/css/2.ae9f1eb3.chunk.css.map": "/TheShoppies/static/css/2.ae9f1eb3.chunk.css.map",
+    "static/css/main.06203209.chunk.css.map": "/TheShoppies/static/css/main.06203209.chunk.css.map",
+    "static/js/2.3e5c38d4.chunk.js.LICENSE.txt": "/TheShoppies/static/js/2.3e5c38d4.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/TheShoppies/static/media/MyriadPro-SemiboldIt.432e2329.otf",
+    "static/media/shoppiesLogo.2fe5b285.png": "/TheShoppies/static/media/shoppiesLogo.2fe5b285.png",
+    "static/media/voteNowBanner.80dc7bca.png": "/TheShoppies/static/media/voteNowBanner.80dc7bca.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b5d814da.js",
+    "static/css/2.ae9f1eb3.chunk.css",
+    "static/js/2.3e5c38d4.chunk.js",
+    "static/css/main.06203209.chunk.css",
+    "static/js/main.6826fb43.chunk.js"
+  ]
+}
