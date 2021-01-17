@@ -58,6 +58,15 @@
     color: rgba(0, 0, 0, 0.582);
   }
 
+  @media only screen and (max-width: 1400px) {
+    .emptyText {
+        font-size: 15em;
+        margin-top: 0.2em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
+
   @media only screen and (max-width: 1220px) {
     .emptyText {
         font-size: 15em;
