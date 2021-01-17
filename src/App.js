@@ -50,6 +50,7 @@ const App = () => {
 	useEffect(() => {
 		getMovieRequest(searchValue);
 	}, [searchValue]);
+	
 
 
 	return (
@@ -59,6 +60,12 @@ const App = () => {
 			</header>
 			<body>
 				<div className="headerUnderline"></div>
+				{nominations.length === 5 
+				?<div className="fiveNominationsSticky">
+					<h1 className="fiveNominationsStickyText">You have made your 5 nominations</h1>
+				</div>
+				:<></>
+				}
 				<div className="voteNow"> <img src={voteBanner} alt="voteNowLogo" /></div>
 				<div>
 					<Search searchValue={searchValue} setSearchValue={setSearchValue} />

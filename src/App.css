@@ -26,6 +26,8 @@ body {
   }
 }
 
+
+
 .App-header {
   background: linear-gradient(-10deg, #00834a, #95bf46, #029622);
   background-size: 200% 200%;
@@ -80,6 +82,89 @@ body {
   }
 }
 
+.fiveNominationsSticky {
+  z-index: 100;
+  position: fixed; 
+  background: linear-gradient(45deg,rgb(24, 216, 88),rgb(29, 145, 0),rgb(73, 245, 73));
+  background-size: 200% 200%;
+  /* animation: gradient 6s ease infinite reverse; */
+  top: 0em;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  left: 3em !important;
+  font-family: shopifyMockFont;
+  box-shadow: 0px 0px 2px 2px rgb(0, 255, 115), 0px 1px 4px 3px rgba(0, 0, 0, 0.466);
+}
+
+.fiveNominationsStickyText {
+  color: rgb(240, 240, 240);
+  font-size: 1.7vw;
+  text-shadow: 2px 1px 4px rgb(0, 255, 76), 1px 1px 4px rgba(0, 255, 85, 0.329) !important;
+  font-weight: bold;
+  
+  background: linear-gradient(10deg,rgb(46, 255, 39),rgb(0, 0, 0));
+  background-size: 900%;
+  
+  color: rgb(0, 0, 0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* animation: gradient 4s ease infinite reverse; */
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0) !important;
+	background-color: #f5f5f500 !important;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar
+{
+  width: 10px;
+  height: 8px;
+	background-color: #f5f5f500 !important;
+}
+
+#moveUp ::-webkit-scrollbar
+{
+  width: 5px;
+  height: 10px !important;
+	background-color: #f5f5f500 !important;
+}
+
+::-webkit-scrollbar-thumb
+{
+  margin-top: 1em;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0) !important;
+	background-image: -webkit-gradient(linear,
+									   30% 0%,
+									   75% 84%,
+									   from(#c4c4c400),
+									   to(#c4c4c400),
+									   color-stop(.65,#54DE5D)) !important
+}
+
+
+/* @media only screen and (max-width: 1430px) {
+  .fiveNominationsStickyText {
+    font-size: 1.5em;
+  }
+} */
+
+
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+
 .movie-row > .row {
   min-height: 28em;
   border-radius: 30px;
@@ -106,6 +191,14 @@ body {
   -moz-box-shadow:    inset 0 0 10px #000000 !important;
   -webkit-box-shadow: inset 0 0 10px #000000 !important;
   box-shadow:         inset 0 0 10px 3px #09570f !important;
+}
+
+@media only screen and (max-width: 1400px) {
+  .nomSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
 }
 
 .card {

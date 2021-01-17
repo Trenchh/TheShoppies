@@ -11,7 +11,7 @@ const Search = (props) => {
                     placeholder="Search for your favourite movies to nominate..."
                     onChange={(event) => props.setSearchValue(event.target.value)}
                     />
-                <i className="glyphicon glyphicon-search search-icon"/>
+                {/* <i className="glyphicon glyphicon-search search-icon"/>   NO ICON B/C IT MAKES USER READ TEXT INSTEAD OF JUST TYPING AWAY */}
         </div>
     );
 };

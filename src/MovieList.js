@@ -28,7 +28,6 @@ const MovieList = (props) => {
 								<FavouriteComponent />
 							</div>
 						}
-
 					</div>
 				</div>
 			))}
